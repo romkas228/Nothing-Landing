@@ -6,9 +6,8 @@
   }
 
   &__product {
-    align-self: stretch;
-
     grid-column: 1 / -1;
+    align-self: stretch;
 
     @include on-tablet {
       grid-column: 1 / 7;

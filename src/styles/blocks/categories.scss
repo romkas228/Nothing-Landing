@@ -19,17 +19,19 @@
   }
 
   &__view-all-link {
-    grid-column: 1 / -1;
     display: flex;
-    justify-content: center;
+    grid-column: 1 / -1;
     align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
     height: 56px;
     border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700px;
+
     font-size: 16px;
+    font-weight: 700px;
     line-height: 27px;
-    box-sizing: border-box;
+    text-decoration: none;
 
     @include button-color;
 
@@ -48,14 +50,21 @@
 
   &__photo {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.2s;
     transform-origin: center center;
 
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: 8px;
+
+    object-fit: cover;
+
+    transition: all 0.2s;
+
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.02);
+      border: 2px solid $main-color;
+
     }
   }
 
@@ -73,7 +82,6 @@
     }
     &--short {
       height: 0;
-
       padding-bottom: 100%;
 
       @include on-tablet {
@@ -88,8 +96,8 @@
 
   &__title {
     margin: 0;
-    font-weight: 700;
     font-size: 18px;
+    font-weight: 700;
     line-height: 140%;
 
     @include on-tablet {
